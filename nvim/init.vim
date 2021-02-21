@@ -1,6 +1,5 @@
 set nocompatible
-" filetype off
-filetype plugin indent on
+filetype off
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                            Start Plug Manager                              "
@@ -10,15 +9,15 @@ call plug#begin()
 
 Plug 'preservim/nerdtree' |            
             \ Plug 'ryanoasis/vim-devicons'
-" Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'icymind/NeoSolarized'
-Plug 'jalvesaq/vimcmdline'
+Plug 'jalvesaq/vimcmdline', {'for': ['python', 'racket']}
 Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'} 
-Plug 'zchee/deoplete-jedi'
+Plug 'zchee/deoplete-jedi', {'for': 'python'}
 Plug 'ervandew/supertab'
-Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary' 
 Plug 'machakann/vim-highlightedyank'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -28,13 +27,12 @@ Plug 'airblade/vim-gitgutter'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                            not always needed                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
-Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'tpope/vim-surround'
-" Plug 'wlangstroth/vim-racket'
-" Plug 'junegunn/vim-easy-align'
-Plug 'gaalcaras/ncm-R'
-Plug 'jalvesaq/Nvim-R', { 'branch': 'stable', 'for': 'r' }
-Plug 'jalvesaq/Nvim-R', { 'branch': 'stable' }
+Plug 'wlangstroth/vim-racket', {'for': 'racket'}
+Plug 'junegunn/vim-easy-align', {'for': 'r'}
+Plug 'gaalcaras/ncm-R', {'for': 'r'}
+Plug 'jalvesaq/Nvim-R', {'for': 'r','branch': 'stable'}
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 
@@ -51,7 +49,7 @@ set nobackup
 
 set nu
 set relativenumber
-" let python_highlight_all=1
+let python_highlight_all=1
 set clipboard=unnamed
 set splitbelow
 set encoding=UTF-8
@@ -124,8 +122,10 @@ let g:SuperTabDefaultCompletionType = "context"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""                                 vimcmdline                                 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 let cmdline_app = {}
 let cmdline_app['python'] = 'ipython'
+let cmdline_app['racket'] = 'racket'
 let cmdline_map_start          = '<F5>'
 let cmdline_map_send           = '<Space>'
 let cmdline_map_send_and_stay  = '<F5><Space>'
@@ -170,7 +170,6 @@ augroup END
 ""                                 Ale                                        "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_linters = {'python': ['flake8', 'mypy'], 'r': ['lintr']}
-" let g:ale_linters = {'python': ['flake8', 'mypy']}
 let g:ale_fixers = {'*': [], 'python': ['black']}
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
