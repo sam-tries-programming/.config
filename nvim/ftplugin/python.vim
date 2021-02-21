@@ -4,15 +4,15 @@ filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                            Start Plug Manager                              "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""     
-call plug#begin()
+" call plug#begin()
 
-Plug 'w0rp/ale'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'} 
-Plug 'zchee/deoplete-jedi'
-Plug 'davidhalter/jedi-vim'
-Plug 'jalvesaq/vimcmdline'
+" Plug 'w0rp/ale'
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'} 
+" Plug 'zchee/deoplete-jedi'
+" Plug 'davidhalter/jedi-vim'
+" Plug 'jalvesaq/vimcmdline'
 
-call plug#end()
+" call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             End plugin manager                             "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -35,9 +35,10 @@ let cmdline_map_quit           = '<F5>q'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""                                 Ale                                        "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:ale_linters = {'python': ['flake8', 'mypy'], 'r': ['lintr']}
-let g:ale_linters = {'python': ['flake8', 'mypy']}
-let g:ale_fixers = {'*': [], 'python': ['black']}
+" let g:ale_linters = {'python': ['flake8', 'mypy']}
+" let g:ale_fixers = {'*': [], 'python': ['black']}
+let g:ale_linters = {'*': ['flake8', 'mypy']}
+let g:ale_fixers = {'*': ['black']}
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 let g:ale_lint_on_enter = 1
