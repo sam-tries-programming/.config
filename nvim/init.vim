@@ -13,7 +13,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'icymind/NeoSolarized'
 Plug 'jalvesaq/vimcmdline', {'for': ['python', 'racket']}
 Plug 'jiangmiao/auto-pairs'
-Plug 'w0rp/ale'
+Plug 'w0rp/ale', {'for': 'python'}
+Plug 'vim-syntastic/syntastic', {'for': 'r'}
+Plug 'jimhester/lintr', {'for': 'r'}
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'} 
 Plug 'zchee/deoplete-jedi', {'for': 'python'}
 Plug 'ervandew/supertab'
@@ -31,6 +33,8 @@ Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'tpope/vim-surround'
 Plug 'wlangstroth/vim-racket', {'for': 'racket'}
 Plug 'junegunn/vim-easy-align', {'for': 'r'}
+Plug 'ncm2/ncm2', {'for': 'r'}
+Plug 'roxma/nvim-yarp', {'for': 'r'}
 Plug 'gaalcaras/ncm-R', {'for': 'r'}
 Plug 'jalvesaq/Nvim-R', {'for': 'r','branch': 'stable'}
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -169,7 +173,7 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""                                 Ale                                        "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ale_linters = {'python': ['flake8', 'mypy'], 'r': ['lintr']}
+let g:ale_linters = {'python': ['flake8', 'mypy']}
 let g:ale_fixers = {'*': [], 'python': ['black']}
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
@@ -234,3 +238,15 @@ let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_modified = '~'
 let g:gitgutter_enabled = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                  syntastic                                  "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:syntastic_enable_r_lintr_checker = 1
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_enable_signs = 1
+let g:syntastic_r_checkers = ['lintr']
+let g:syntastic_error_symbol = '✘'
+let syntastic_style_error_symbol = '✘'
+let g:syntastic_warning_symbol = '⚠'
+let syntastic_style_warning_symbol = '⚠'
