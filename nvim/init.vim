@@ -16,7 +16,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale', {'for': 'python'}
 Plug 'vim-syntastic/syntastic', {'for': 'r'}
 Plug 'jimhester/lintr', {'for': 'r'}
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'} 
+Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'} 
 Plug 'zchee/deoplete-jedi', {'for': 'python'}
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-commentary' 
@@ -29,7 +29,7 @@ Plug 'airblade/vim-gitgutter'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                            not always needed                               "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
-Plug 'davidhalter/jedi-vim', {'for': 'python'}
+" Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'tpope/vim-surround'
 Plug 'wlangstroth/vim-racket', {'for': 'racket'}
 Plug 'junegunn/vim-easy-align', {'for': 'r'}
