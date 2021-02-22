@@ -1,5 +1,6 @@
 set nocompatible
 filetype off
+" filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                            Start Plug Manager                              "
@@ -38,14 +39,17 @@ Plug 'roxma/nvim-yarp', {'for': 'r'}
 Plug 'gaalcaras/ncm-R', {'for': 'r'}
 Plug 'jalvesaq/Nvim-R', {'for': 'r','branch': 'stable'}
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
+" Plug 'ncm2/ncm2-ultisnips', {'for': 'r'}
+" Plug 'ncm2/ncm2-bufword', {'for': 'r'}
+" Plug 'ncm2/ncm2-path', {'for': 'r'}
 
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             End plugin manager                             "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" filetype plugin indent on
+filetype plugin indent on
+
 set history=100
 set laststatus=2
 set noswapfile
@@ -126,7 +130,6 @@ let g:SuperTabDefaultCompletionType = "context"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""                                 vimcmdline                                 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 let cmdline_app = {}
 let cmdline_app['python'] = 'ipython'
 let cmdline_app['racket'] = 'racket'
@@ -210,10 +213,10 @@ let R_objbr_opendf = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""                               jedi-vim                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:jedi#completions_enabled = 0
-let g:jedi#use_splits_not_buffers = "right"
-let g:jedi#auto_close_doc = 0
-let g:jedi#show_call_signatures = 1 
+" let g:jedi#completions_enabled = 0
+" let g:jedi#use_splits_not_buffers = "right"
+" let g:jedi#auto_close_doc = 0
+" let g:jedi#show_call_signatures = 1 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""                              vim-easy-align                                "
@@ -250,3 +253,12 @@ let g:syntastic_error_symbol = '✘'
 let syntastic_style_error_symbol = '✘'
 let g:syntastic_warning_symbol = '⚠'
 let syntastic_style_warning_symbol = '⚠'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                    ncm2                                     "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" enable ncm2 for all buffers
+autocmd filetype r call ncm2#enable_for_buffer()
+" autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+
+let g:ncm2#popup_delay=200
