@@ -1,7 +1,6 @@
 set nocompatible
 filetype off
 " filetype plugin indent on
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                            Start Plug Manager                              "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""     
@@ -262,3 +261,10 @@ autocmd filetype r call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
 
 let g:ncm2#popup_delay=200
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                  Ultisnips                                  "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:UltiSnipsExpandTrigger="<Right>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<Left>"
