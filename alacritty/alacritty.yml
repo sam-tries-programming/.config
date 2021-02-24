@@ -2,11 +2,11 @@ window:
   padding:
     x: 5
     y: 5
+  decorations: buttonless
   ############################
   #  none for Linux machine  #
   ############################
   # decorations: none           
-  decorations: buttonless
   startup_mode: Windowed
 font:
   normal:
