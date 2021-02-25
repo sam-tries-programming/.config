@@ -17,7 +17,7 @@ Plug 'w0rp/ale', {'for': 'python'}
 Plug 'vim-syntastic/syntastic', {'for': 'r'}
 Plug 'jimhester/lintr', {'for': 'r'}
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'} 
-Plug 'zchee/deoplete-jedi', {'for': 'python'}
+Plug 'deoplete-plugins/deoplete-jedi', {'for': 'python'}
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-commentary' 
 Plug 'machakann/vim-highlightedyank'
@@ -119,6 +119,7 @@ let g:airline#extensions#ale#enabled = 1
 let airline#extensions#ale#error_symbol = '✘'
 let airline#extensions#ale#warning_symbol = '⚠'
 let airline#extensions#ale#show_line_numbers = 1
+let g:airline_section_z = ' %{strftime("%-I:%M %p")}'
 if $PROFILENAME == "dark"
     let g:airline_theme='solarized'
 elseif $PROFILENAME == "light"
@@ -129,6 +130,7 @@ endif
 ""                                  Supertab                                  "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "<Right>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""                                 vimcmdline                                 "
