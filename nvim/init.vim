@@ -119,7 +119,11 @@ let g:airline#extensions#ale#enabled = 1
 let airline#extensions#ale#error_symbol = '✘'
 let airline#extensions#ale#warning_symbol = '⚠'
 let airline#extensions#ale#show_line_numbers = 1
-let g:airline_theme='base16_solarized'
+if $PROFILENAME == "dark"
+    let g:airline_theme='solarized'
+elseif $PROFILENAME == "light"
+    let g:airline_theme='solarized_flood'
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""                                  Supertab                                  "
@@ -212,10 +216,10 @@ let R_objbr_opendf = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""                               jedi-vim                                     "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:jedi#completions_enabled = 0
-" let g:jedi#use_splits_not_buffers = "right"
-" let g:jedi#auto_close_doc = 0
-" let g:jedi#show_call_signatures = 1 
+let g:jedi#completions_enabled = 0
+let g:jedi#use_splits_not_buffers = "right"
+let g:jedi#auto_close_doc = 0
+let g:jedi#show_call_signatures = 1 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""                              vim-easy-align                                "
